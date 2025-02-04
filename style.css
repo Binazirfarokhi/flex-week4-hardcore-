@@ -14,6 +14,9 @@ body{
 header{ 
  padding: var(--pd);
  text-align: center;
+ display: flex;
+ flex-flow: row wrap;
+ gap: 1rem;
 }
 h1{ 
     color: var(--c1);
@@ -21,6 +24,7 @@ h1{
     align-items: center;
     gap: 1rem;
     font-size: 1.5rem;
+    margin: 0;
 }
 /* we are going to create line before and after the h1 by using after and before sudo element . we can add before and after the text some space*/
 h1::before,h1::after{
@@ -30,11 +34,13 @@ h1::before,h1::after{
 
 }
 .decrotive-element{
+    /* flex-basis: 100%; */
+    margin: auto;
     font-size:2.5rem ;
     border: 1px solid wheat;
     border-radius: 50%;
     aspect-ratio: 1;
-    width: 55px;
+    max-width: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +50,10 @@ img{
     width: 100%;
     height: auto;
     display: block;
+}
+nav{
+    /* flex-basis: 100%; */
+display: contents;
 }
 nav ul { 
     list-style-type: none;
@@ -55,13 +65,27 @@ nav a {
     color:white;
     /* if you do not add this line all a will touch each other  */
     display: block;
-    padding: .5rem;
+    padding: 1rem;
     border: 1px solid white;
+    text-decoration: none;
 }
 nav a:hover{ 
     background-color: var(--c1);
 
 }
+.menu1, .menu2, .menu3, .menu4{
+    /* flex child property */
+flex-basis: 100%;
+/* flex parent propert */
+display: flex;
+justify-content: center;
+}
+.menu1 li{
+flex-basis: 30%;
+flex-grow: 1;
+flex: 1 0 30%;
+}
+
 
 .visually-hidden{
   
