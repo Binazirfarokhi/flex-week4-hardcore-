@@ -1,5 +1,6 @@
 :root{
     --c1:steelblue;
+    --pd:1rem;
 
 
 }
@@ -10,11 +11,58 @@ body{
     background-color: #141414;
     color:white; 
 }
+header{ 
+ padding: var(--pd);
+ text-align: center;
+}
+h1{ 
+    color: var(--c1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+/* we are going to create line before and after the h1 by using after and before sudo element . we can add before and after the text some space*/
+h1::before,h1::after{
+    content: "";
+    border-bottom: 1px solid var(--c1);
+    flex-grow: 1;
+
+}
+.decrotive-element{
+    font-size:2.5rem ;
+    border: 1px solid wheat;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(black 48%, white 48%, white 50%, black 50%);
+}
 img{
     width: 100%;
     height: auto;
     display: block;
 }
+nav ul { 
+    list-style-type: none;
+    padding: 0;
+
+margin: 0;
+}
+nav a { 
+    color:white;
+    /* if you do not add this line all a will touch each other  */
+    display: block;
+    padding: .5rem;
+    border: 1px solid white;
+}
+nav a:hover{ 
+    background-color: var(--c1);
+
+}
+
 .visually-hidden{
   
         clip: rect(0 0 0 0); 
